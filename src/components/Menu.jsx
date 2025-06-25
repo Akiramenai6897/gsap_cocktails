@@ -18,7 +18,7 @@ const Menu = () => {
             .fromTo(
                 '#m-right-leaf',
                 {
-                    x: 100,
+                    x: 150,
                     y: 100,
                 },
                 {
@@ -29,7 +29,7 @@ const Menu = () => {
             .fromTo(
                 '#m-left-leaf',
                 {
-                    x: -100,
+                    x: -150,
                 },
                 {
                     x: 0,
