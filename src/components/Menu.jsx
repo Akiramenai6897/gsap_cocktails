@@ -7,6 +7,37 @@ const Menu = () => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
 
     useGSAP(()=>{
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: '#menu',
+                start: 'top 50%',
+                end: 'bottom 80%',
+                scrub: true,
+            }
+        })
+            .fromTo(
+                '#m-right-leaf',
+                {
+                    x: 100,
+                    y: 100,
+                },
+                {
+                    x: 0,
+                    y: 150,
+                }
+            )
+            .fromTo(
+                '#m-left-leaf',
+                {
+                    x: -100,
+                },
+                {
+                    x: 0,
+                }
+            )
+    })
+
+    useGSAP(()=>{
         gsap.fromTo('#title', { opacity: 0 }, { opacity: 1, duration: 1})
         gsap.fromTo('.cocktail img', { opacity: 0, xPercent: -100 }, {xPercent: 0, opacity: 1, duration: 1, ease: 'power1.inOut'})
         gsap.fromTo('.details h2', {yPercent: 100, opacity: 0 }, {yPercent: 0, opacity: 1, ease: 'power1.inOut', duration: 1})

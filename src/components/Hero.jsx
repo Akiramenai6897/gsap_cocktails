@@ -41,11 +41,22 @@ const Hero = () => {
             scrollTrigger: {
                 trigger: '#hero',
                 start: 'top top',
-                end: 'bottom top',
+                end: 'bottom 0%',
                 scrub: true,
             }
-        }).to('.right-leaf', { y: 200 }, 0)
-        .to('.left-leaf', { y: -200 }, 0)
+        })
+            .fromTo(
+                '.right-leaf',
+                { y: 0 },
+                { y: 200 },
+                0
+            )
+            .fromTo(
+                '.left-leaf',
+                { y: 150 },
+                { y: -200 },
+                0
+            )
 
 
         videoRef.current.onloadedmetadata = () => {
